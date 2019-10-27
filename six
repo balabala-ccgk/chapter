@@ -1,0 +1,86 @@
+/**
+ * @author 啦啦啦
+ * @data   2019.10.26
+ */
+ 
+ 
+package com.google.book;
+/*
+* description:父类
+* */ 
+public class Book {
+    private String bookid;
+    private String bookname;
+    protected int pages;
+
+    public Book(String bookid, String bookname, int pages) {
+        this.bookid = bookid;
+        this.bookname = bookname;
+        this.pages = pages;
+    }
+
+    public String getBookid() {
+        return bookid;
+    }
+
+    public void setBookid(String bookid) {
+        this.bookid = bookid;
+    }
+
+    public String getBookname() {
+        return bookname;
+    }
+
+    public void setBookname(String bookname) {
+        this.bookname = bookname;
+    }
+
+    public int getPages() {
+        return pages;
+    }
+
+    public void setPages(int pages) {
+        this.pages = pages;
+    }
+}
+
+
+
+
+/*
+* description:子类
+* */
+package com.google.book;
+
+public class Dictionary extends Book {
+    private int pingyinPages;
+
+    public Dictionary(String bookid, String bookname, int pages,int pingyinPages) {
+        super(bookid, bookname, pages);
+        this.pingyinPages = pingyinPages;
+    }
+
+    public int getPingyinPages() {
+        return pingyinPages;
+    }
+
+    public void setPingyinPages(int pingyinPages) {
+        this.pingyinPages = pingyinPages;
+    }
+}
+
+
+
+
+
+package com.google.book;
+
+import com.google.book.Dictionary;
+
+public class Bookmanager {
+    public static void main(String[] args){
+        Dictionary dictionary = new Dictionary("INB001","free",90,3);
+        System.out.println(dictionary.getPingyinPages());
+
+    }
+}
