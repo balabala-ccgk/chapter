@@ -1,0 +1,69 @@
+/**
+ * @author 啦啦啦
+ * @data   2019.10.31
+ */
+package com.google.work1;
+
+/**
+ * @program: work1
+ * @Description: Virtual superclass
+ * @author: lalala
+ * @date: 2019/10/31
+ */
+abstract class Book {
+    int pages;
+    double price;
+    public abstract void Info();
+}
+
+
+/**
+ * @program: work1
+ * @Description: subclass
+ * @author: lalala
+ * @date: 2019/10/31
+ */
+public class Novel extends Book {
+    public Novel(int pages,double price) {
+        this.pages=pages;
+        this.price=price;}
+        @Override
+        public void Info()
+    {
+        System.out.println("This is a fiction, which has " +pages+ " pages,"+" costs " + price + " yuan.");
+    }
+}
+
+
+
+/**
+ * @program: work1
+ * @Description: subclass
+ * @author: lalala
+ * @date: 2019/10/31
+ */
+    public class Magazine extends Book{
+        private String cycle;
+    public Magazine(int pages,double price,String cycle) {
+        this.pages=pages;
+        this.price=price;
+        this.cycle=cycle;
+    }
+
+        @Override
+        public void Info() {
+            System.out.println("This is a magazine, which has " + pages + "  pages,"+" costs " + price + " yuan, and publish once every " +  cycle + ".");
+        }
+    }
+	
+	
+	
+	
+public class Test {
+        public static void main(String[] args) {
+            Novel n = new Novel(199, 12);
+            n.Info();
+            Magazine m = new Magazine(3, 30, "6 months");
+            m.Info();
+        }
+}
