@@ -1,0 +1,71 @@
+/**
+ * @program: classprogram
+ * @Description:
+ * @author: 啦啦啦
+ * @date: 2019/11/9
+ */
+
+package com.google.work2;
+
+public class Book {
+    private int pages;
+    private String name;
+
+    public Book(int pages, String name, String spell) {
+        this.pages = pages;
+        this.name = name;
+    }
+
+    public int getPages() {
+        return pages;
+    }
+
+    public void setPages(int pages) {
+        this.pages = pages;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+}
+
+
+/**
+ * @program: classprogram
+ * @Description:
+ * @author: 啦啦啦
+ * @date: 2019/11/9
+ */
+
+package com.google.work2;
+
+public class Dictionary extends Book {
+    public String spell;
+
+    public Dictionary(int pages, String name, String spell) {
+        super(pages, name, spell);
+
+    }
+}
+
+/**
+ * @program: classprogram
+ * @Description: main
+ * @author: 啦啦啦
+ * @date: 2019/11/9
+ */
+
+package com.google.work2;
+
+public class Test {
+    public void main (String[] args){
+        Dictionary D = new Dictionary(500,"字典","22-33");
+        System.out.print(D.getName()+" is a dictionary. It have "+D.getPages()+ "of pages and it's spelling page is "+D.spell);
+    }
+}
+
+
