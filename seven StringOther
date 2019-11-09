@@ -1,0 +1,18 @@
+/**
+ * @program: classprogram
+ * @Description: type tran string
+ * @author: 啦啦啦
+ * @date: 2019/11/9
+ */
+
+package seven;
+
+public class StringOther {
+    public static void main(String[] arg){
+        float f = 56.1234f;
+        String str = String.valueOf(f);
+        int idx = str.indexOf('.');
+        String sf =str.substring(0,idx+3);
+        System.out.println("f=" +sf);
+    }
+}
