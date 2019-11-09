@@ -1,0 +1,88 @@
+/**
+ * @program: classprogram
+ * @Description: interface
+ * @author: 啦啦啦
+ * @date: 2019/11/9
+ */
+
+package six.P118;
+
+public interface Book {
+    public void info();
+}
+
+
+
+
+/**
+ * @program: classprogram
+ * @Description: read
+ * @author: 啦啦啦
+ * @date: 2019/11/9
+ */
+
+public class Magazine implements Book {
+    private int pages;
+    private double prices;
+    public int cycle;
+
+    public Magazine(int pages, double prices, int cycle) {
+        this.pages = pages;
+        this.prices = prices;
+        this.cycle = cycle;
+    }
+
+    @Override
+    public void info() {
+        System.out.print("This is a Manazine. It have " +pages+ " of pages. It's prices are " +prices+ " yuan. It's cycle is "+cycle+" week");
+    }
+}
+
+
+
+
+
+/**
+ * @program: classprogram
+ * @Description: read
+ * @author: 啦啦啦
+ * @date: 2019/11/9
+ */
+
+public class TextBook implements Book {
+    private int pages;
+    private double prices;
+    public String object;
+
+    public TextBook(int pages, double prices, String object) {
+        this.pages = pages;
+        this.prices = prices;
+        this.object = object;
+    }
+
+    @Override
+    public void info() {
+        System.out.print("This is a TextBook. It have " +pages+ " of pages. It's prices are " +prices+ " yuan. It is suitable for "+object);
+    }
+}
+
+
+
+
+/**
+ * @program: classprogram
+ * @Description: main
+ * @author: 啦啦啦
+ * @date: 2019/11/9
+ */
+
+
+public class Test {
+    public static void main(String[] args) {
+        Magazine M = new Magazine(30, 10, 2);
+        TextBook T = new TextBook(200, 55.5, "students");
+        T.info();
+        System.out.print('\n');
+        M.info();
+    }
+}
