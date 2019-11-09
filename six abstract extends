@@ -1,0 +1,87 @@
+/**
+ * @program: classprogram
+ * @Description: abstract
+ * @author: 啦啦啦
+ * @date: 2019/11/9
+ */
+
+package six;
+
+abstract class Share {
+    abstract void draw();
+    abstract void erase();
+}
+
+
+/**
+ * @program: classprogram
+ * @Description: extends
+ * @author: 啦啦啦
+ * @date: 2019/11/9
+ */
+
+
+package six;
+
+public  class Circle extends Share {
+    @Override
+    void draw() {
+        System.out.println("Circle.draw()");
+    }
+
+    @Override
+    void erase() {
+        System.out.println("Circle.erase()");
+    }
+}
+
+
+/**
+ * @program: classprogram
+ * @Description: extends
+ * @author: 啦啦啦
+ * @date: 2019/11/9
+ */
+
+
+package six;
+
+public class Square extends Share {
+    @Override
+    void draw() {
+        System.out.println("Square.draw()");
+    }
+
+    @Override
+    void erase() {
+        System.out.println("Square.erase()");
+    }
+}
+
+
+/**
+ * @program: classprogram
+ * @Description: main
+ * @author: 啦啦啦
+ * @date: 2019/11/9
+ */
+
+
+package six;
+
+public class Test {
+    public static Share randShare() {
+        switch((int)(Math.random()*2)){
+            default:
+            case 0:return new Circle();
+            case 1:return new Square();
+        }
+    }
+    public static void main(String[] args){
+        Share[] s = new Share[10];
+        for(int i = 0; i < s.length; ++i)
+            s[i] = randShare();
+        for(int i = 0; i < s.length; ++i)
+            s[i].draw();
+    }
+}
