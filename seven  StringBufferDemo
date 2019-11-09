@@ -1,0 +1,39 @@
+/**
+ * @program: classprogram
+ * @Description: StringBuffer
+ * @author: 啦啦啦
+ * @date: 2019/11/9
+ */
+ 
+package seven;
+
+
+public class StringBufferDemo {
+    public static void main(String[] args){
+        String s = "Hello";
+        boolean b = false;
+        char c = ' ';
+        int i = 9;
+        long l = 123456789;
+        float f = 1.2345f;
+        double d = 123.456789;
+        StringBuffer buf1 = new StringBuffer();
+        buf1.append(s);buf1.append(c);
+        buf1.append(b);buf1.append(c);
+        buf1.append(i);buf1.append(c);
+        buf1.append(l);buf1.append(c);
+        buf1.append(f);buf1.append(c);
+        buf1.append(d);
+        System.out.println("buf1=" +buf1);
+        StringBuffer buf2 = new StringBuffer();
+        buf2.insert(0,s);buf2.insert(0,c);
+        buf2.insert(0,b);buf2.insert(0,c);
+        buf2.insert(0,i);buf2.insert(0,c);
+        buf2.insert(0,l);buf2.insert(0,c);
+        buf2.insert(0,f);buf2.insert(0,c);
+        buf2.insert(0,d);
+        System.out.println("buf2=" +buf2);
+        buf1.delete(1,4);
+        System.out.println("buf1=" +buf1);
+    }
+}
